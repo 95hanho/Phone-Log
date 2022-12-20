@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="application/xml" charset="utf-8">
+		<title>cdr test Info</title>
+		<style type="text/css"> 
+		</style>
+		
+		<script>
+		
+		function form_submit(){
+			//var api_url = document.getElementById('api_url').value;
+			var frm = document.inputForm;
+			var api_url = frm.api_url.value;
+			frm.action = api_url;
+			frm.submit();
+		}
+		
+		</script>
+	</head>
+<body>
+  <center>
+  <font face="Malgun Gothic" size="+1"><b>cdr search</b></font>
+   <form method="post" name="inputForm" id="inputForm">
+   <table width="700" border="1" cellspacing="3" cellpadding="3" bordercolor="#000000">
+     
+	 <tr>
+	   <td bgcolor="#FF9999" class="normalbold" width="30%">
+			<div align="center">api_url</div>
+       </td>
+		<td class="normal" width="70%">
+		<!--
+			<input type="text" id="api_url" name="api_url" value='https://127.0.0.1:8443/cdr/402' style="width:90%">
+			-->
+			<select name="api_url">
+			<option value="https://127.0.0.1:8443/cdr/402" >https://127.0.0.1:8443/cdr/402</option>
+			<option value="https://127.0.0.1:8443/cdrn/402" >https://127.0.0.1:8443/cdrn/402</option>
+		</td>
+     </tr>
+	 
+     <tr>
+	   <td bgcolor="#FF9999" class="normalbold" width="30%">
+			<div align="center">LOGIS_PWD</div>
+       </td>
+		<td class="normal" width="70%">
+			<input type="text" name="LOGIS_PWD" value="H2001T"> (최대10자리)
+		</td>
+     </tr>
+	 
+	 <tr>
+	   <td bgcolor="#FF9999" class="normalbold" width="30%">
+			<div align="center">S_DATE</div>
+       </td>
+		<td class="normal" width="70%">
+			<input type="text" name="S_DATE" value="201706291410"> (년/월/일/시/분 12자리)
+		</td>
+     </tr>
+	 
+	 <tr>
+	   <td bgcolor="#FF9999" class="normalbold" width="30%">
+			<div align="center">E_DATE</div>
+       </td>
+		<td class="normal" width="70%">
+			<input type="text" name="E_DATE" value="201707011539"> (년/월/일/시/분 12자리)<br/>
+			※ 조회조건 <br/>
+			1. S_DATE 는 E_DATE 보다 이후 일 수 없다. <br/>
+			2. S_DATE 와 E_DATE 조회 기간은 최대 7일 <br/>
+			3. S_DATE 는 현재일 기준으로 전월 1일 이전 일 수 없다. <br/>
+			3. S_DATE 는 이상 이며, E_DATE 는 미만 으로 조회한다.  <br/>
+		</td>
+     </tr>
+	 
+	 <tr>
+	   <td bgcolor="#FF9999" class="normalbold" width="30%">
+			<div align="center">ACCESS_NUM</div>
+       </td>
+		<td class="normal" width="70%">
+			<input type="text" name="ACCESS_NUM" value=""> (최대 15자리, 번호별 조회시 필요)
+		</td>
+     </tr>
+	 
+	 <tr>
+	   <td bgcolor="#FF9999" class="normalbold" width="30%">
+			<div align="center">CALLED_NUM</div>
+       </td>
+		<td class="normal" width="70%">
+			<input type="text" name="CALLED_NUM" value=""> (최대 15자리, 번호별 조회시 필요)
+		</td>
+     </tr>
+	 
+	 <tr>
+	   <td bgcolor="#FF9999" class="normalbold" width="30%">
+			<div align="center">CALLING_NUM</div>
+       </td>
+		<td class="normal" width="70%">
+			<input type="text" name="CALLING_NUM" value=""> (최대 15자리, 번호별 조회시 필요)
+		</td>
+     </tr>
+	 
+    </table>
+      
+    <br>
+    <p>
+	<!--
+    <input type="submit" name="submit" value="확인">
+    <input type="reset" name="Reset" value="취소">
+	-->
+	<input type="button" name="submit_btn" value="확인" onClick="form_submit();">
+	
+    </P>
+   </form></center>
+ </body>
+</html>
+
